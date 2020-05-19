@@ -1,0 +1,157 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    05/19/2020  18:23:51  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\vddgt.obj TO .\Objects\dgt PRINT (.\Listings\dgt.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\vddgt.obj (VDDGT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\dgt (VDDGT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0011H     UNIT         ?DT?VDDGT
+            IDATA   0019H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00EBH     UNIT         ?PR?MAIN?VDDGT
+            CODE    08EBH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0977H     008BH     UNIT         ?C?LIB_CODE
+            CODE    0A02H     002CH     UNIT         ?PR?_DELAY?VDDGT
+            CODE    0A2EH     000DH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\dgt (VDDGT)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?VDDGT
+  +--> ?C_INITSEG
+
+?PR?MAIN?VDDGT
+  +--> ?PR?_DELAY?VDDGT
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\dgt (VDDGT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        VDDGT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/19/2020  18:23:51  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:0A23H         PUBLIC        _delay
+  B:00A0H.0       PUBLIC        P2_0
+  B:00A0H.1       PUBLIC        P2_1
+  B:00A0H.4       PUBLIC        P2_4
+  B:00A0H.5       PUBLIC        P2_5
+  B:00A0H.6       PUBLIC        P2_6
+  D:0008H         PUBLIC        donvi
+  D:0009H         PUBLIC        chuc
+  C:0800H         PUBLIC        main
+  D:000AH         PUBLIC        dem
+  D:000CH         PUBLIC        so
+  D:0016H         PUBLIC        i
+  D:0017H         PUBLIC        n
+  -------         PROC          L?0026
+  -------         ENDPROC       L?0026
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  C:0A23H         LINE#         13
+  C:0A23H         LINE#         14
+  C:0A2DH         LINE#         15
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0800H         LINE#         16
+  C:0800H         LINE#         17
+  C:0800H         LINE#         18
+  C:0806H         LINE#         20
+  C:0808H         LINE#         21
+  C:0808H         LINE#         22
+  C:0815H         LINE#         23
+  C:0822H         LINE#         25
+  C:0837H         LINE#         26
+  C:0837H         LINE#         27
+  C:0837H         LINE#         28
+  C:0837H         LINE#         29
+  C:0837H         LINE#         31
+  C:0837H         LINE#         32
+  C:0837H         LINE#         33
+  C:083AH         LINE#         34
+  C:083CH         LINE#         35
+  C:0840H         LINE#         36
+  C:0848H         LINE#         37
+  C:084EH         LINE#         38
+  C:0850H         LINE#         40
+  C:0865H         LINE#         41
+  C:0867H         LINE#         42
+  C:086EH         LINE#         43
+  C:0872H         LINE#         44
+  C:0874H         LINE#         46
+  C:0876H         LINE#         47
+  C:087CH         LINE#         48
+  C:087CH         LINE#         49
+  C:0889H         LINE#         50
+  C:0896H         LINE#         52
+  C:08ABH         LINE#         53
+  C:08ABH         LINE#         54
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/19/2020  18:23:51  PAGE 3
+
+
+  C:08ABH         LINE#         55
+  C:08ABH         LINE#         56
+  C:08ABH         LINE#         58
+  C:08ABH         LINE#         59
+  C:08ABH         LINE#         60
+  C:08AEH         LINE#         61
+  C:08B0H         LINE#         62
+  C:08B4H         LINE#         63
+  C:08BCH         LINE#         65
+  C:08C2H         LINE#         67
+  C:08D7H         LINE#         68
+  C:08D9H         LINE#         69
+  C:08E0H         LINE#         70
+  C:08E4H         LINE#         71
+  C:08E6H         LINE#         72
+  C:08E8H         LINE#         73
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        VDDGT
+
+  -------         MODULE        ?C?SIDIV
+  C:0977H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?UIDIV
+  C:09ADH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0123H BYTE (14%) *
+******************************************************************************
+
+Program Size: data=26.0 xdata=0 code=574
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

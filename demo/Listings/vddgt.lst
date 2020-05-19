@@ -1,0 +1,100 @@
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/19/2020 18:23:51 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE VDDGT
+OBJECT MODULE PLACED IN .\Objects\vddgt.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE vddgt.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\vdd
+                    -gt.lst) TABS(2) OBJECT(.\Objects\vddgt.obj)
+
+line level    source
+
+   1          #include<regx52.h>
+   2          char so[]={0x40,0x79,0x24,0x30,0x19,0x12,0x02,0x78,0x00,0x10};
+   3          char i;
+   4          int dem,n;
+   5          unsigned char chuc,donvi;
+   6          #define led1 P2_0
+   7          #define led2 P2_1
+   8          #define ledR P2_4
+   9          #define ledY P2_5
+  10          #define ledG P2_6
+  11          #define bat 0
+  12          #define tat 1
+  13          void delay(int time){
+  14   1        while(time--);
+  15   1      }
+  16          void main(){
+  17   1        while(1){
+  18   2          dem=30;
+  19   2          //-------- dèn do 
+  20   2          ledR = bat;
+  21   2          while(dem!=0){
+  22   3            chuc = dem/10;
+  23   3            donvi = dem%10;
+  24   3            //---------- sang led 7 doan doi
+  25   3            for(i=0;i<=10;i++){
+  26   4              led1 = bat;
+  27   4              P0=so[chuc];
+  28   4              delay(5000);
+  29   4              led1 = tat;
+  30   4              
+  31   4              led2 = bat;
+  32   4              P0=so[donvi];
+  33   4              delay(5000);
+  34   4              led2=tat; 
+  35   4            }
+  36   3            dem--;
+  37   3          }
+  38   2          ledR = tat;
+  39   2          //-------- den vang
+  40   2          for(i = 1;i<=3;i++){
+  41   3            ledY = bat;
+  42   3            delay(100000);
+  43   3          }
+  44   2          ledY=tat;
+  45   2          //-------- den xanh
+  46   2          ledG = bat;
+  47   2          dem =15;
+  48   2          while(dem!=0){
+  49   3            chuc = dem/10;
+  50   3            donvi = dem%10;
+  51   3            //---------- sang led 7 doan doi
+  52   3            for(i=0;i<=10;i++){
+  53   4              led1 = bat;
+  54   4              P0=so[chuc];
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/19/2020 18:23:51 PAGE 2   
+
+  55   4              delay(5000);
+  56   4              led1 = tat;
+  57   4              
+  58   4              led2 = bat;
+  59   4              P0=so[donvi];
+  60   4              delay(5000);
+  61   4              led2=tat; 
+  62   4            }
+  63   3            dem--;
+  64   3            //-----------------------------
+  65   3          }
+  66   2          //------- den vang
+  67   2          for(i = 1;i<=3;i++){
+  68   3            ledY = bat;
+  69   3            delay(100000);
+  70   3          }
+  71   2          ledY = tat;
+  72   2          ledG = tat;
+  73   2        }
+  74   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    279    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     17    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

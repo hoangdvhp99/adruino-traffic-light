@@ -1,0 +1,3 @@
+".\Objects\vddgt.obj" 
+TO ".\Objects\dgt" 
+PRINT(".\Listings\dgt.m51")
