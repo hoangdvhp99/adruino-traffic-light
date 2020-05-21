@@ -14,6 +14,10 @@ unsigned char chuc1,donvi1,chuc2,donvi2;
 #define ledR2 P2_0
 #define ledY2 P2_1
 #define ledG2 P2_2
+#define dbx1 P3_4
+#define dbd1 P3_5
+#define dbx2 P3_6
+#define dbd2 P3_7
 #define bat 0
 #define tat 1
 void delay(int time){
@@ -25,6 +29,7 @@ void main(){
 		//-------- dèn do 1 4 , dèn xanh 2 3 
 		ledR1 = bat;
 		ledG2 = bat;
+		dbx1 = bat;dbd2 = bat;
 		while(dem2!=-1&&dem1!=4){
 			chuc1 = dem1/10; 	donvi1 = dem1%10;
 			chuc2 = dem2/10;  donvi2 = dem2%10;
@@ -54,15 +59,16 @@ void main(){
 				P0=P1=so[chuc1];
 				delay(5000);
 				led11 = tat; led21=tat;
-				
+				dbx1 = bat;dbd2= bat;
 				led12 = bat; led22 = bat;
 				P0=P1=so[donvi1];
 				delay(5000);
 				led12 = tat; led22=tat;
 			}
+			dbx1 = tat;dbd2= tat;
 			dem1--;
 		}
-		ledR1 = tat; ledY2 = tat; 
+		ledR1 = tat; ledY2 = tat; dbd1= bat; dbx2 = bat;
 		//===== dèn do 2 3 , den xanh 1 4 
 		dem1=25; dem2=30;
 		ledR2 = bat; ledG1 = bat;
@@ -94,13 +100,13 @@ void main(){
 				P1=P0=so[chuc2];
 				delay(5000);
 				led21 = tat;led11=tat;
-				
+				dbd1 = bat;dbx2= bat;
 				led22 = bat; led12=bat;
 				P1=P0=so[donvi2];
 				delay(5000);
 				led22 = tat;led12=tat;
 			}
-			dem2--;
+			dem2--;dbd1= tat;dbx2=tat;
 		}
 		ledY1 = tat;
 	}

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   VDDGT                                                             05/20/2020 01:29:18 PAGE 1   
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 01:11:14 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE VDDGT
@@ -24,110 +24,116 @@ line level    source
   14          #define ledR2 P2_0
   15          #define ledY2 P2_1
   16          #define ledG2 P2_2
-  17          #define bat 0
-  18          #define tat 1
-  19          void delay(int time){
-  20   1        while(time--);
-  21   1      }
-  22          void main(){
-  23   1        while(1){
-  24   2          dem1=30; dem2=25;
-  25   2          //-------- dèn do 1 4 , dèn xanh 2 3 
-  26   2          ledR1 = bat;
-  27   2          ledG2 = bat;
-  28   2          while(dem2!=-1&&dem1!=4){
-  29   3            chuc1 = dem1/10;  donvi1 = dem1%10;
-  30   3            chuc2 = dem2/10;  donvi2 = dem2%10;
-  31   3          //---------- sang led 7 doan doi
-  32   3            for(i=0;i<=10;i++){
-  33   4              led11 = bat; led21 = bat;
-  34   4              P0=so[chuc1];
-  35   4              P1=so[chuc2];
-  36   4              delay(5000);
-  37   4              led11 = tat; led21 = tat;
-  38   4              
-  39   4              led12 = bat; led22 = bat; 
-  40   4              P0=so[donvi1]; // dèn 1 4
-  41   4              P1=so[donvi2]; // den 2 3
-  42   4              delay(5000);
-  43   4              led12 = tat; led22 = tat; 
-  44   4            }
-  45   3            dem1--; dem2--;
-  46   3          }
-  47   2          //-------- den vang 2 3
-  48   2          ledG2 = tat;
-  49   2          ledY2 = bat;
-  50   2          while(dem1!=-1){
-  51   3            chuc1 = dem1/10;  donvi1 = dem1%10;
-  52   3            for(i=0;i<=10;i++){
-  53   4              led11 = bat; led21=bat;
-  54   4              P0=P1=so[chuc1];
-C51 COMPILER V9.60.0.0   VDDGT                                                             05/20/2020 01:29:18 PAGE 2   
+  17          #define dbx1 P3_4
+  18          #define dbd1 P3_5
+  19          #define dbx2 P3_6
+  20          #define dbd2 P3_7
+  21          #define bat 0
+  22          #define tat 1
+  23          void delay(int time){
+  24   1        while(time--);
+  25   1      }
+  26          void main(){
+  27   1        while(1){
+  28   2          dem1=30; dem2=25;
+  29   2          //-------- dèn do 1 4 , dèn xanh 2 3 
+  30   2          ledR1 = bat;
+  31   2          ledG2 = bat;
+  32   2          dbx1 = bat;dbd2 = bat;
+  33   2          while(dem2!=-1&&dem1!=4){
+  34   3            chuc1 = dem1/10;  donvi1 = dem1%10;
+  35   3            chuc2 = dem2/10;  donvi2 = dem2%10;
+  36   3          //---------- sang led 7 doan doi
+  37   3            for(i=0;i<=10;i++){
+  38   4              led11 = bat; led21 = bat;
+  39   4              P0=so[chuc1];
+  40   4              P1=so[chuc2];
+  41   4              delay(5000);
+  42   4              led11 = tat; led21 = tat;
+  43   4              
+  44   4              led12 = bat; led22 = bat; 
+  45   4              P0=so[donvi1]; // dèn 1 4
+  46   4              P1=so[donvi2]; // den 2 3
+  47   4              delay(5000);
+  48   4              led12 = tat; led22 = tat; 
+  49   4            }
+  50   3            dem1--; dem2--;
+  51   3          }
+  52   2          //-------- den vang 2 3
+  53   2          ledG2 = tat;
+  54   2          ledY2 = bat;
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 01:11:14 PAGE 2   
 
-  55   4              delay(5000);
-  56   4              led11 = tat; led21=tat;
-  57   4              
-  58   4              led12 = bat; led22 = bat;
-  59   4              P0=P1=so[donvi1];
+  55   2          while(dem1!=-1){
+  56   3            chuc1 = dem1/10;  donvi1 = dem1%10;
+  57   3            for(i=0;i<=10;i++){
+  58   4              led11 = bat; led21=bat;
+  59   4              P0=P1=so[chuc1];
   60   4              delay(5000);
-  61   4              led12 = tat; led22=tat;
-  62   4            }
-  63   3            dem1--;
-  64   3          }
-  65   2          ledR1 = tat; ledY2 = tat; 
-  66   2          //===== dèn do 2 3 , den xanh 1 4 
-  67   2          dem1=25; dem2=30;
-  68   2          ledR2 = bat; ledG1 = bat;
-  69   2          while(dem1!=-1&&dem2!=4){
-  70   3            chuc1 = dem1/10;  donvi1 = dem1%10;
-  71   3            chuc2 = dem2/10;  donvi2 = dem2%10;
-  72   3          //---------- sang led 7 doan doi
-  73   3            for(i=0;i<=10;i++){
-  74   4              led11 = bat; led21 = bat;
-  75   4              P0=so[chuc1];
-  76   4              P1=so[chuc2];
-  77   4              delay(5000);
-  78   4              led11 = tat; led21 = tat;
-  79   4              
-  80   4              led12 = bat; led22 = bat; 
-  81   4              P0=so[donvi1]; // dèn 1 4
-  82   4              P1=so[donvi2]; // den 2 3
+  61   4              led11 = tat; led21=tat;
+  62   4              dbx1 = bat;dbd2= bat;
+  63   4              led12 = bat; led22 = bat;
+  64   4              P0=P1=so[donvi1];
+  65   4              delay(5000);
+  66   4              led12 = tat; led22=tat;
+  67   4            }
+  68   3            dbx1 = tat;dbd2= tat;
+  69   3            dem1--;
+  70   3          }
+  71   2          ledR1 = tat; ledY2 = tat; dbd1= bat; dbx2 = bat;
+  72   2          //===== dèn do 2 3 , den xanh 1 4 
+  73   2          dem1=25; dem2=30;
+  74   2          ledR2 = bat; ledG1 = bat;
+  75   2          while(dem1!=-1&&dem2!=4){
+  76   3            chuc1 = dem1/10;  donvi1 = dem1%10;
+  77   3            chuc2 = dem2/10;  donvi2 = dem2%10;
+  78   3          //---------- sang led 7 doan doi
+  79   3            for(i=0;i<=10;i++){
+  80   4              led11 = bat; led21 = bat;
+  81   4              P0=so[chuc1];
+  82   4              P1=so[chuc2];
   83   4              delay(5000);
-  84   4              led12 = tat; led22 = tat; 
-  85   4            }
-  86   3            dem1--; dem2--;
-  87   3          }
-  88   2          //==== den vang  1 4 
-  89   2          ledG1 = tat; ledY1 = bat;
-  90   2          while(dem2!=-1){
-  91   3            chuc2 = dem2/10;  donvi2 = dem2%10;
-  92   3            for(i=0;i<=10;i++){
-  93   4              led21 = bat; led11=bat;
-  94   4              P1=P0=so[chuc2];
-  95   4              delay(5000);
-  96   4              led21 = tat;led11=tat;
-  97   4              
-  98   4              led22 = bat; led12=bat;
-  99   4              P1=P0=so[donvi2];
- 100   4              delay(5000);
- 101   4              led22 = tat;led12=tat;
- 102   4            }
- 103   3            dem2--;
- 104   3          }
- 105   2          ledY1 = tat;
- 106   2        }
- 107   1      }
+  84   4              led11 = tat; led21 = tat;
+  85   4              
+  86   4              led12 = bat; led22 = bat; 
+  87   4              P0=so[donvi1]; // dèn 1 4
+  88   4              P1=so[donvi2]; // den 2 3
+  89   4              delay(5000);
+  90   4              led12 = tat; led22 = tat; 
+  91   4            }
+  92   3            dem1--; dem2--;
+  93   3          }
+  94   2          //==== den vang  1 4 
+  95   2          ledG1 = tat; ledY1 = bat;
+  96   2          while(dem2!=-1){
+  97   3            chuc2 = dem2/10;  donvi2 = dem2%10;
+  98   3            for(i=0;i<=10;i++){
+  99   4              led21 = bat; led11=bat;
+ 100   4              P1=P0=so[chuc2];
+ 101   4              delay(5000);
+ 102   4              led21 = tat;led11=tat;
+ 103   4              dbd1 = bat;dbx2= bat;
+ 104   4              led22 = bat; led12=bat;
+ 105   4              P1=P0=so[donvi2];
+ 106   4              delay(5000);
+ 107   4              led22 = tat;led12=tat;
+ 108   4            }
+ 109   3            dem2--;dbd1= tat;dbx2=tat;
+ 110   3          }
+ 111   2          ledY1 = tat;
+ 112   2        }
+ 113   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    576    ----
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 01:11:14 PAGE 3   
+
+   CODE SIZE        =    602    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =     19    ----
    IDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   VDDGT                                                             05/20/2020 01:29:18 PAGE 3   
-
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
