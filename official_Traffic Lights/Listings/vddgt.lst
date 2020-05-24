@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 01:11:14 PAGE 1   
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 08:57:54 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE VDDGT
@@ -62,7 +62,7 @@ line level    source
   52   2          //-------- den vang 2 3
   53   2          ledG2 = tat;
   54   2          ledY2 = bat;
-C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 01:11:14 PAGE 2   
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 08:57:54 PAGE 2   
 
   55   2          while(dem1!=-1){
   56   3            chuc1 = dem1/10;  donvi1 = dem1%10;
@@ -126,7 +126,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 01:11:14 PAGE 3   
+C51 COMPILER V9.60.0.0   VDDGT                                                             05/22/2020 08:57:54 PAGE 3   
 
    CODE SIZE        =    602    ----
    CONSTANT SIZE    =   ----    ----
